@@ -1,0 +1,5 @@
+C:/Users/Lenovo E580/Desktop/Lab1/cmake-build-debug/CMakeFiles/untitled1.dir
+C:/Users/Lenovo E580/Desktop/Lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo E580/Desktop/Lab1/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/Lenovo E580/Desktop/Lab1/cmake-build-debug/CMakeFiles/CMakeLists.dir
+C:/Users/Lenovo E580/Desktop/Lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
