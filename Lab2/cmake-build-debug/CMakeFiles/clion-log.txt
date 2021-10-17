@@ -1,0 +1,6 @@
+"C:\Users\Lenovo E580\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\Lenovo E580\Desktop\Lab2"
+-- Configuring done
+CMake Error: Cannot determine link language for target "CMakeLists".
+CMake Error: CMake can not determine linker language for target: CMakeLists
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.
