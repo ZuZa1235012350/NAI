@@ -1,0 +1,13 @@
+"C:\Users\Lenovo E580\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\Lenovo E580\Desktop\Lab4"
+-- Configuring done
+CMake Error at CMakeLists.txt:9 (add_executable):
+  Cannot find source file:
+
+    wyklad
+
+
+CMake Error at CMakeLists.txt:9 (add_executable):
+  No SOURCES given to target: wyklad
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

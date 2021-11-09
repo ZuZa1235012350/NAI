@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Lenovo E580/Desktop/Lab4/main.cpp
+cmath
+-
+array
+-
+functional
+-
+iostream
+-
+random
+-
+vector
+-
+algorithm
+-
+limits
+-
+
