@@ -64,7 +64,7 @@ int main(int argc, char** argv)
 
         if ((waitKey(1000.0 / 60.0) & 0x0ff) == 120) 
         {
-            cout << "esc key is pressed by user" << endl;
+            cout << "x key was pressed" << endl;
             break;
         }
     }
