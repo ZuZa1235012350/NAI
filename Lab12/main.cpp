@@ -192,19 +192,16 @@ int main(int argc, char **argv)
         }
         for (int i = 0; i < 1000; i++)
         {
-            // metoda gradientu
-            //std::cout << i << "\n";
+            
             point2d dp = derivative(field, currentPosition); 
             dp = dp * (1.0 / length(dp));
             dp = dp * acceleration;
-            //std::clog << i << "dp: " << dp << std::endl;
-            // kolejne pozycje po prouszaniu sie po polu
+
             currentVelocity = currentVelocity - dp;
             if (length(currentVelocity) > velocity)
                 currentVelocity = (currentVelocity * (1.0 / (length(currentVelocity)))) * velocity;
             currentPosition = currentPosition + currentVelocity;
-            //string p1 = to_string(currentPosition[0]);
-            //string p2 = to_string(currentPosition[1]);
+        
             outdata << currentPosition << "\n";
         }
         outdata.close();
