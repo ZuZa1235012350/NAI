@@ -1,0 +1,3 @@
+C:/Users/Lenovo E580/CLionProjects/Lab12/cmake-build-debug/CMakeFiles/Lab12.dir
+C:/Users/Lenovo E580/CLionProjects/Lab12/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo E580/CLionProjects/Lab12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
