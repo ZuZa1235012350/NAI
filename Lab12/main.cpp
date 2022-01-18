@@ -11,47 +11,47 @@ using namespace std;
 /*
   MATH PORTION OF THE CODE
 */
-// reprezentacja punktu pint 2d czyli (x,y)
+
 using point2d = array<double, 2>;
 inline point2d operator+(const point2d a, const point2d b)
 {
     return {a[0] + b[0], a[1] + b[1]};
 }
-// mozenie punktu razy stala
+
 inline point2d operator*(const point2d a, const double b)
 {
     return {a[0] * b, a[1] * b};
 }
-// odejmowanie punktow
+
 inline point2d operator-(const point2d a, const point2d b)
 {
     return a + (b * -1.0);
 }
-// mnożenie poszczegolnych wartosci wektora czyli punktow
+
 inline point2d operator%(const point2d a, const point2d b)
 {
     return {a[0] * b[0], a[1] * b[1]};
 }
-// iloczyn skalarny
+
 inline double operator*(const point2d a, const point2d b)
 {
     auto r = a % b;
     // sumowanie elementów [r.begin do r.end()) do init czyli tego 0.0
     return accumulate(r.begin(), r.end(), 0.0);
 }
-// oblicznie dlugosci
+
 inline double length(const point2d a)
 {
     return sqrt(a * a);
 }
-// wypisanie
+
 inline ostream &operator<<(ostream &o, const point2d a)
 {
     o << a[0] << " " << a[1];
     return o;
 }
 
-////To jest moje zadanie
+
 double pDistance(point2d point, point2d targetStart, point2d targetEnd)
 {
 
@@ -91,7 +91,7 @@ double pDistance(point2d point, point2d targetStart, point2d targetEnd)
     auto dy = point[1] - yy;
     return sqrt(dx * dx + dy * dy);
 }
-// pochodna przyjmuje funkcje z ktorej chce liczyc pochodna, punkt dla danego punktu, d to mala roznica ktora dodawana jest do punktu
+
 point2d derivative(function<double(point2d)> f, point2d x, double d = 1.52588e-05)
 {
     // ze wzoru na pochodna
@@ -104,16 +104,15 @@ point2d derivative(function<double(point2d)> f, point2d x, double d = 1.52588e-0
 
 int main(int argc, char **argv)
 {
-    point2d destination = {0.0, 0.0};      // cel
-    point2d currentPosition = {10.0, 1.0}; // start
-    double velocity = 0.1;                 // bedzie wykonywal ruch o 0.1
+    point2d destination = {0.0, 0.0};     
+    point2d currentPosition = {10.0, 1.0}; 
+    double velocity = 0.1;                 
     double acceleration = 0.1;
     string option;
     cout << "Rectangle or segments" << endl;
     cin >> option;
     if(option == "rectangle"){
-         //przeszkoda ktora musi omijać
-         //jest to prostokat
+        
          vector<pair<point2d, double>> obstacles = {};
          for (double x = 4.6; x < 5.7; x += 0.01)
          {
@@ -123,9 +122,7 @@ int main(int argc, char **argv)
                  obstacles.push_back({{x, y}, (argc > 1) ? stod(argv[1]) : 0.001});
              }
          }
-        //Wersja dla prostokąta
-         //definicja pola potencjalow ktora dziala na wspolrzednych x,y a zwaraca liczbe, czyli wartosc pola
-         //definicja pola po ktorym sie poruszamy.Zwraca watrosc pola potencjalow dla danego punktu
+     
          auto field = [&obstacles, &destination](point2d p) -> double
          {
              double obstaclefield = 0;
@@ -148,29 +145,26 @@ int main(int argc, char **argv)
         }
         for (int i = 0; i < 1000; i++)
         {
-            // metoda gradientu
-            //std::cout << i << "\n";
-            point2d dp = derivative(field, currentPosition); //mamy dwie funkcje field, ttrzeba je trzymać w osobnych lambdach
+          
+            point2d dp = derivative(field, currentPosition); 
             dp = dp * (1.0 / length(dp));
             dp = dp * acceleration;
-            //std::clog << i << "dp: " << dp << std::endl;
-            // kolejne pozycje po prouszaniu sie po polu
+           
             currentVelocity = currentVelocity - dp;
             if (length(currentVelocity) > velocity)
                 currentVelocity = (currentVelocity * (1.0 / (length(currentVelocity)))) * velocity;
             currentPosition = currentPosition + currentVelocity;
-            //string p1 = to_string(currentPosition[0]);
-            //string p2 = to_string(currentPosition[1]);
+         
             outdata << currentPosition << "\n";
         }
         outdata.close();
     }else if(option == "segments"){
-        //Wektor odcinków
+     
         vector<pair<point2d, point2d>> segments{{{1.0, 0.0}, {1.0, 2.0}}, {{8.0, 0.0},{8.0, 2.0}}};
 
 
 
-        //Wersja dla odcinków
+  
         auto field = [&](point2d p) -> double
         {
 
@@ -189,7 +183,7 @@ int main(int argc, char **argv)
 
         //    currentPosition
         point2d currentVelocity = {0.0, 0.0};
-        // wyznaczanie ścieżki
+ 
         ofstream outdata("result.txt");
         if (!outdata)
         {
@@ -200,7 +194,7 @@ int main(int argc, char **argv)
         {
             // metoda gradientu
             //std::cout << i << "\n";
-            point2d dp = derivative(field, currentPosition); //mamy dwie funkcje field, ttrzeba je trzymać w osobnych lambdach
+            point2d dp = derivative(field, currentPosition); 
             dp = dp * (1.0 / length(dp));
             dp = dp * acceleration;
             //std::clog << i << "dp: " << dp << std::endl;
